@@ -1,0 +1,1652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Al Wajid Laptops — Premium Used Laptops in Lahore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+  :root {
+    --black: #0a0a0a;
+    --white: #f5f5f7;
+    --gray-1: #1d1d1f;
+    --gray-2: #2d2d2f;
+    --gray-3: #424245;
+    --gray-4: #6e6e73;
+    --gray-5: #a1a1a6;
+    --gray-6: #d2d2d7;
+    --accent: #0071e3;
+    --accent-hover: #0077ed;
+    --gold: #f5c842;
+    --success: #30d158;
+    --danger: #ff453a;
+    --surface: #141414;
+    --surface2: #1c1c1e;
+    --surface3: #2c2c2e;
+    --glass: rgba(255,255,255,0.04);
+    --glass-border: rgba(255,255,255,0.09);
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--black); }
+  ::-webkit-scrollbar-thumb { background: var(--gray-3); border-radius: 3px; }
+
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(10,10,10,0.82);
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(10,10,10,0.95);
+  }
+
+  .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+    height: 52px;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.3px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-logo-dot {
+    width: 8px; height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse-dot 2s infinite;
+  }
+
+  @keyframes pulse-dot {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--gray-5);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 7px 16px;
+    border-radius: 980px;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent-hover) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 24px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% -20%, rgba(0,113,227,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(0,113,227,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 50% at 20% 80%, rgba(245,200,66,0.05) 0%, transparent 60%);
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 980px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--gray-5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    backdrop-filter: blur(10px);
+    animation: fadeInDown 0.6s ease both;
+  }
+
+  .hero-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--success);
+    border-radius: 50%;
+  }
+
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 8vw, 88px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.7s ease 0.1s both;
+  }
+
+  .hero h1 span {
+    background: linear-gradient(135deg, #0071e3 0%, #40a9ff 50%, #0071e3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: fadeInUp 0.7s ease 0.1s both, shimmer 4s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  .hero-sub {
+    font-size: clamp(17px, 2.5vw, 22px);
+    color: var(--gray-4);
+    max-width: 560px;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    animation: fadeInUp 0.7s ease 0.2s both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 0.7s ease 0.3s both;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 980px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+    transform: scale(1.02);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--accent);
+    padding: 14px 28px;
+    border-radius: 980px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1.5px solid rgba(0,113,227,0.4);
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--accent);
+    background: rgba(0,113,227,0.08);
+  }
+
+  /* TRUST STRIP */
+  .trust-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 28px 24px;
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    background: var(--surface);
+    flex-wrap: wrap;
+    animation: fadeIn 0.8s ease 0.5s both;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gray-5);
+    font-size: 13px;
+    font-weight: 400;
+  }
+
+  .trust-item i { color: var(--success); }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--glass-border);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .stat-item {
+    background: var(--surface);
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-num span { color: var(--accent); }
+
+  .stat-label {
+    font-size: 13px;
+    color: var(--gray-4);
+    font-weight: 400;
+  }
+
+  /* SECTION */
+  section { padding: 80px 24px; max-width: 1200px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 12px;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 17px;
+    color: var(--gray-4);
+    max-width: 520px;
+    line-height: 1.6;
+    margin-bottom: 48px;
+  }
+
+  /* FILTERS */
+  .filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 8px 18px;
+    border-radius: 980px;
+    font-size: 13px;
+    font-weight: 500;
+    border: 1.5px solid var(--glass-border);
+    background: var(--glass);
+    color: var(--gray-5);
+    cursor: pointer;
+    transition: all 0.2s;
+    backdrop-filter: blur(8px);
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* PRODUCT GRID */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .product-card {
+    background: var(--surface2);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    group: true;
+  }
+
+  .product-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,113,227,0.35);
+    box-shadow: 0 24px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(0,113,227,0.15);
+  }
+
+  .product-img-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--surface3);
+    aspect-ratio: 4/3;
+  }
+
+  .product-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  .product-card:hover .product-img-wrap img {
+    transform: scale(1.06);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--danger);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 980px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .product-wishlist {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0;
+  }
+
+  .product-card:hover .product-wishlist { opacity: 1; }
+  .product-wishlist:hover { background: var(--danger); }
+
+  .product-info {
+    padding: 20px;
+  }
+
+  .product-brand {
+    font-size: 11px;
+    color: var(--gray-4);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .product-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.4;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-specs {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+
+  .spec-tag {
+    background: var(--surface3);
+    border: 1px solid var(--glass-border);
+    color: var(--gray-5);
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 400;
+  }
+
+  .product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .price-wrap { display: flex; flex-direction: column; }
+
+  .price-old {
+    font-size: 12px;
+    color: var(--gray-4);
+    text-decoration: line-through;
+  }
+
+  .price-new {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .add-to-cart {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    color: #fff;
+  }
+
+  .add-to-cart:hover {
+    background: var(--accent-hover);
+    transform: scale(1.1);
+  }
+
+  /* FEATURES GRID */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .feature-card {
+    background: var(--surface2);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 32px 28px;
+    transition: all 0.3s;
+  }
+
+  .feature-card:hover {
+    border-color: rgba(0,113,227,0.3);
+    background: var(--surface3);
+  }
+
+  .feature-icon {
+    width: 48px; height: 48px;
+    border-radius: 14px;
+    background: rgba(0,113,227,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    color: var(--accent);
+  }
+
+  .feature-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+
+  .feature-desc {
+    font-size: 14px;
+    color: var(--gray-4);
+    line-height: 1.65;
+  }
+
+  /* BRANDS */
+  .brands-section {
+    background: var(--surface);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 60px 24px;
+  }
+
+  .brands-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .brands-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+
+  .brand-item {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--gray-3);
+    transition: color 0.2s;
+    cursor: pointer;
+    letter-spacing: -0.02em;
+  }
+
+  .brand-item:hover { color: var(--gray-6); }
+
+  /* TESTIMONIALS */
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 48px;
+  }
+
+  .review-card {
+    background: var(--surface2);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 28px;
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+    color: var(--gold);
+  }
+
+  .review-text {
+    font-size: 15px;
+    color: var(--gray-5);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+
+  .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .reviewer-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), #40a9ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .reviewer-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .reviewer-loc {
+    font-size: 12px;
+    color: var(--gray-4);
+  }
+
+  /* CTA BANNER */
+  .cta-banner {
+    background: var(--surface);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+  }
+
+  .cta-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .cta-content h2 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .cta-content p {
+    font-size: 16px;
+    color: var(--gray-4);
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+
+  .cta-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .info-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--surface2);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 16px 20px;
+  }
+
+  .info-card-icon {
+    width: 40px; height: 40px;
+    min-width: 40px;
+    border-radius: 10px;
+    background: rgba(0,113,227,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+  }
+
+  .info-card-text { font-size: 14px; color: var(--gray-5); }
+  .info-card-text strong { color: var(--white); display: block; font-size: 15px; margin-bottom: 2px; }
+
+  /* MAP PLACEHOLDER */
+  .map-section {
+    height: 280px;
+    background: var(--surface2);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--gray-4);
+    font-size: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .map-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      repeating-linear-gradient(0deg, var(--glass-border) 0, var(--glass-border) 1px, transparent 1px, transparent 60px),
+      repeating-linear-gradient(90deg, var(--glass-border) 0, var(--glass-border) 1px, transparent 1px, transparent 60px);
+    opacity: 0.5;
+  }
+
+  .map-pin {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    position: relative;
+    animation: float-pin 3s ease-in-out infinite;
+    box-shadow: 0 0 0 16px rgba(0,113,227,0.15), 0 0 0 32px rgba(0,113,227,0.07);
+  }
+
+  @keyframes float-pin {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--surface);
+    border-top: 1px solid var(--glass-border);
+    padding: 60px 24px 32px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+
+  .footer-brand p {
+    font-size: 14px;
+    color: var(--gray-4);
+    line-height: 1.7;
+    margin: 16px 0 24px;
+    max-width: 280px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .social-btn {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-4);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+
+  .social-btn:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .footer-col h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    font-size: 14px;
+    color: var(--gray-4);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-col ul li a:hover { color: var(--white); }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-top: 1px solid var(--glass-border);
+    padding-top: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-bottom p {
+    font-size: 13px;
+    color: var(--gray-4);
+  }
+
+  .rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 980px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: var(--gray-5);
+  }
+
+  .rating-badge .stars { color: var(--gold); font-size: 12px; }
+
+  /* ANIMATIONS */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* SEARCH BAR */
+  .search-wrap {
+    max-width: 560px;
+    margin: 40px auto 0;
+    position: relative;
+    animation: fadeInUp 0.7s ease 0.4s both;
+  }
+
+  .search-input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1.5px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 16px 56px 16px 20px;
+    font-size: 15px;
+    color: var(--white);
+    font-family: var(--font-body);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus { border-color: var(--accent); }
+  .search-input::placeholder { color: var(--gray-4); }
+
+  .search-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: background 0.2s;
+  }
+
+  .search-btn:hover { background: var(--accent-hover); }
+
+  /* MOBILE MENU */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--gray-5);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* BACK TO TOP */
+  .back-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: all 0.3s;
+  }
+
+  .back-top.show { opacity: 1; transform: translateY(0); }
+  .back-top:hover { background: var(--accent-hover); transform: translateY(-2px); }
+
+  /* CART DRAWER */
+  .cart-count {
+    background: var(--danger);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 700;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -4px; right: -4px;
+  }
+
+  .cart-btn-wrap { position: relative; cursor: pointer; }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--surface3);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 14px;
+    color: var(--white);
+    z-index: 10000;
+    opacity: 0;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    backdrop-filter: blur(16px);
+    white-space: nowrap;
+  }
+
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  .toast-icon { color: var(--success); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: repeat(2, 1fr); }
+    .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+    .cta-inner { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .features-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; }
+    .brands-grid { gap: 28px; }
+  }
+
+  /* LOAD MORE */
+  .load-more-wrap {
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  /* SECTION FULL WIDTH */
+  .full-width {
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .center-text { text-align: center; }
+  .center-text .section-sub { margin-left: auto; margin-right: auto; }
+
+  /* GRADIENT LINE */
+  .gradient-line {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    border: none;
+    margin: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <span class="toast-icon" id="toast-icon">✓</span>
+  <span id="toast-msg">Added to cart!</span>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-dot"></div>
+      Al Wajid Laptops
+    </a>
+    <ul class="nav-links">
+      <li><a href="#products">Products</a></li>
+      <li><a href="#features">Why Us</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="tel:03070021000" class="nav-cta">
+          Call Now
+        </a>
+      </li>
+    </ul>
+    <div class="cart-btn-wrap" onclick="showToast('🛍️ Cart coming soon!')">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+      <div class="cart-count" id="cartCount">0</div>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero full-width" style="padding-left:24px;padding-right:24px;">
+  <div class="hero-bg"></div>
+  <div style="position:relative;z-index:1;width:100%;">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      Lahore's Most Trusted Laptop Store
+    </div>
+    <h1>
+      Premium Used Laptops.<br>
+      <span>Unbeatable Prices.</span>
+    </h1>
+    <p class="hero-sub">
+      421+ verified used laptops in stock. Non-painted, non-repaired, not used locally. Every machine quality-checked with 30-day warranty.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        Browse 421+ Laptops
+      </a>
+      <a href="tel:03070021000" class="btn-ghost">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 9.68a19.79 19.79 0 01-3.07-8.63A2 2 0 012.77 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.69a16 16 0 006.27 6.27l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        0307 0021000
+      </a>
+    </div>
+    <div class="search-wrap">
+      <input type="text" class="search-input" placeholder="Search laptops — Dell, HP, Lenovo, MacBook..." id="searchInput" oninput="filterProducts()">
+      <button class="search-btn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item">
+    <svg width="16" height="16" fill="none" stroke="#30d158" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    Non-Painted Laptops
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" fill="none" stroke="#30d158" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    30-Day Warranty
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" fill="none" stroke="#30d158" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    6 Months Free After-Sale
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" fill="none" stroke="#30d158" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    Non-Repaired Units
+  </div>
+  <div class="trust-item">
+    <svg width="16" height="16" fill="none" stroke="#30d158" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    Original Prices Listed
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item fade-in-up">
+    <div class="stat-num">421<span>+</span></div>
+    <div class="stat-label">Laptops in Stock</div>
+  </div>
+  <div class="stat-item fade-in-up" style="transition-delay:0.1s">
+    <div class="stat-num">4.2<span>★</span></div>
+    <div class="stat-label">Google Rating</div>
+  </div>
+  <div class="stat-item fade-in-up" style="transition-delay:0.2s">
+    <div class="stat-num">638<span>+</span></div>
+    <div class="stat-label">Happy Customers</div>
+  </div>
+  <div class="stat-item fade-in-up" style="transition-delay:0.3s">
+    <div class="stat-num">6<span>mo</span></div>
+    <div class="stat-label">Free After-Sale Care</div>
+  </div>
+</div>
+
+<hr class="gradient-line">
+
+<!-- PRODUCTS -->
+<section id="products" class="fade-in-up">
+  <div class="section-eyebrow">Our Inventory</div>
+  <h2 class="section-title">Featured Laptops</h2>
+  <p class="section-sub">Handpicked from our 421+ laptop collection. All prices clearly listed, all units quality verified.</p>
+
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+    <button class="filter-btn" onclick="setFilter('dell', this)">Dell</button>
+    <button class="filter-btn" onclick="setFilter('hp', this)">HP</button>
+    <button class="filter-btn" onclick="setFilter('lenovo', this)">Lenovo</button>
+    <button class="filter-btn" onclick="setFilter('apple', this)">Apple</button>
+    <button class="filter-btn" onclick="setFilter('gaming', this)">Gaming</button>
+    <button class="filter-btn" onclick="setFilter('sale', this)">On Sale</button>
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+
+  <div class="load-more-wrap">
+    <button class="btn-ghost" onclick="loadMore()">
+      Load More Laptops
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
+  </div>
+</section>
+
+<hr class="gradient-line">
+
+<!-- BRANDS -->
+<div class="brands-section">
+  <div class="brands-inner center-text fade-in-up">
+    <div class="section-eyebrow">Brands We Carry</div>
+    <h2 class="section-title" style="font-size:clamp(24px,4vw,36px)">Top Brands, Best Prices</h2>
+    <div class="brands-grid">
+      <div class="brand-item">Dell</div>
+      <div class="brand-item">HP</div>
+      <div class="brand-item">Lenovo</div>
+      <div class="brand-item">Apple</div>
+      <div class="brand-item">Asus</div>
+      <div class="brand-item">Acer</div>
+      <div class="brand-item">Sony</div>
+      <div class="brand-item">Toshiba</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section id="features" class="fade-in-up center-text">
+  <div class="section-eyebrow">Why Choose Us</div>
+  <h2 class="section-title">Lahore's Most Trusted<br>Used Laptop Store</h2>
+  <p class="section-sub">We've built trust with 638+ customers by being transparent, fair, and consistent.</p>
+
+  <div class="features-grid">
+    <div class="feature-card fade-in-up">
+      <div class="feature-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div class="feature-title">30-Day Warranty</div>
+      <div class="feature-desc">Every laptop comes with Al Wajid's 30-day warranty. We stand behind every machine we sell.</div>
+    </div>
+    <div class="feature-card fade-in-up" style="transition-delay:0.1s">
+      <div class="feature-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="feature-title">6 Months Free After-Sale</div>
+      <div class="feature-desc">Get 6 months of free after-sale service support on every purchase. Your investment is protected.</div>
+    </div>
+    <div class="feature-card fade-in-up" style="transition-delay:0.2s">
+      <div class="feature-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div class="feature-title">Transparent Pricing</div>
+      <div class="feature-desc">All prices clearly listed on every laptop in stock. No surprises, no hidden charges, ever.</div>
+    </div>
+    <div class="feature-card fade-in-up" style="transition-delay:0.1s">
+      <div class="feature-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      </div>
+      <div class="feature-title">Non-Painted Laptops</div>
+      <div class="feature-desc">We only sell original-condition machines. No cosmetic cover-ups, no hidden damage. What you see is what you get.</div>
+    </div>
+    <div class="feature-card fade-in-up" style="transition-delay:0.2s">
+      <div class="feature-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="feature-title">Not Used Locally</div>
+      <div class="feature-desc">Our stock is sourced from international markets — not worn down by local heavy use.</div>
+    </div>
+    <div class="feature-card fade-in-up" style="transition-delay:0.3s">
+      <div class="feature-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+      </div>
+      <div class="feature-title">Real Product Images</div>
+      <div class="feature-desc">We photograph every laptop ourselves. Most images on our website are original — not stock photos.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="gradient-line">
+
+<!-- REVIEWS -->
+<section id="reviews" class="fade-in-up center-text">
+  <div class="section-eyebrow">Customer Reviews</div>
+  <h2 class="section-title">4.2★ on Google</h2>
+  <p class="section-sub">638+ verified reviews from happy customers across Lahore and Pakistan.</p>
+  <div style="display:flex;align-items:center;justify-content:center;gap:4px;margin-bottom:8px;">
+    <span style="color:var(--gold);font-size:22px;">★★★★</span><span style="color:var(--gray-4);font-size:22px;">★</span>
+    <span style="font-size:28px;font-weight:700;margin-left:8px;font-family:var(--font-display);">4.2</span>
+  </div>
+  <div style="color:var(--gray-4);font-size:13px;margin-bottom:48px;">Based on 638 Google reviews</div>
+
+  <div class="reviews-grid">
+    <div class="review-card fade-in-up">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"Best laptop shop in Lahore! Got a Dell i5 8th gen for a great price. Working perfectly, battery is good. Al Wajid staff is very honest and helpful."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">A</div>
+        <div>
+          <div class="reviewer-name">Ahmad Raza</div>
+          <div class="reviewer-loc">DHA Lahore</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card fade-in-up" style="transition-delay:0.1s">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">"I bought a MacBook Air from here. The condition was exactly as described. Price was lower than all other shops. Will definitely recommend to everyone."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#30d158,#0071e3)">S</div>
+        <div>
+          <div class="reviewer-name">Sara Malik</div>
+          <div class="reviewer-loc">Gulberg, Lahore</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card fade-in-up" style="transition-delay:0.2s">
+      <div class="review-stars">★★★★<span style="color:var(--gray-4)">★</span></div>
+      <p class="review-text">"Good experience overall. HP Elitebook I purchased is in great shape. 6-month after-sale support is a big plus — they helped me set everything up."</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:linear-gradient(135deg,#f5c842,#ff6b35)">U</div>
+        <div>
+          <div class="reviewer-name">Usman Khan</div>
+          <div class="reviewer-loc">Johar Town, Lahore</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="gradient-line">
+
+<!-- CTA / CONTACT -->
+<div class="cta-banner" id="contact">
+  <div class="cta-inner">
+    <div class="cta-content fade-in-up">
+      <div class="section-eyebrow">Visit Our Shop</div>
+      <h2>Come See Us in<br>Lahore Today</h2>
+      <p>We're open 11am – 11pm daily at Main Ghazi Road, Nishtar Town. Walk in, browse our full stock, and take home a laptop same day.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="tel:03070021000" class="btn-primary">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 9.68a19.79 19.79 0 01-3.07-8.63A2 2 0 012.77 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.69a16 16 0 006.27 6.27l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Call 0307 0021000
+        </a>
+        <a href="https://wa.me/923070021000" class="btn-ghost" target="_blank">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="fade-in-up" style="transition-delay:0.2s">
+      <div class="cta-info-cards">
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="info-card-text">
+            <strong>Shop Address</strong>
+            Speed O Bus Stop, Main Ghazi Rd, Nishtar Town, Lahore 54000
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="info-card-text">
+            <strong>Opening Hours</strong>
+            11:00 AM – 11:00 PM · Open Daily
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 9.68a19.79 19.79 0 01-3.07-8.63A2 2 0 012.77 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.69a16 16 0 006.27 6.27l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="info-card-text">
+            <strong>Phone Numbers</strong>
+            0307 0021000 · 0313 4111661
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3H14z"/><path d="M7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3"/></svg>
+          </div>
+          <div class="info-card-text">
+            <strong>Service Areas</strong>
+            Lahore · Shoukat Town · DHA · Online Delivery
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo" style="font-size:20px;font-family:var(--font-display);font-weight:700;display:flex;align-items:center;gap:8px;">
+        <div class="nav-logo-dot"></div>
+        Al Wajid Laptops
+      </div>
+      <p>Lahore's most trusted used laptop store since 2015. 421+ laptops in stock. Transparent pricing, genuine quality, unbeatable value.</p>
+      <div class="footer-social">
+        <a href="https://alwajidlaptops.com" class="social-btn" target="_blank" title="Website">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </a>
+        <a href="https://wa.me/923070021000" class="social-btn" target="_blank" title="WhatsApp">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+        <a href="tel:03070021000" class="social-btn" title="Call">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.82 9.68a19.79 19.79 0 01-3.07-8.63A2 2 0 012.77 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.69a16 16 0 006.27 6.27l1.06-1.06a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#products">All Laptops</a></li>
+        <li><a href="#products">Dell Laptops</a></li>
+        <li><a href="#products">HP Laptops</a></li>
+        <li><a href="#products">Lenovo Laptops</a></li>
+        <li><a href="#products">Apple MacBooks</a></li>
+        <li><a href="#products">Gaming Laptops</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Support</h4>
+      <ul>
+        <li><a href="https://alwajidlaptops.com/refund_returns/">Refund & Returns</a></li>
+        <li><a href="https://alwajidlaptops.com/map/">Shop Location</a></li>
+        <li><a href="tel:03070021000">Call Us</a></li>
+        <li><a href="https://wa.me/923070021000">WhatsApp</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="#features">Why Choose Us</a></li>
+        <li><a href="#reviews">Customer Reviews</a></li>
+        <li><a href="#contact">Store Hours</a></li>
+        <li><a href="https://alwajidlaptops.com">Visit Website</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2024 Al Wajid Laptops · All rights reserved · Lahore, Pakistan</p>
+    <div class="rating-badge">
+      <span class="stars">★★★★</span>
+      <span>4.2 · 638 reviews on Google</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// PRODUCT DATA
+const products = [
+  {
+    id:1, name:"HP Elitebook 845 G8 Ryzen 5 5650u", brand:"HP", tags:["hp"],
+    price:75000, oldPrice:85000, sale:true,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2025/02/1-845-g7-324x324.jpg",
+    specs:["Ryzen 5","11th Gen","Elitebook"]
+  },
+  {
+    id:2, name:"Dell Latitude E5550 Core i5 5th Gen", brand:"Dell", tags:["dell"],
+    price:38500, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2021/07/WhatsApp-Image-2021-07-01-at-3.06.38-PM-324x324.jpeg",
+    specs:["Core i5","5th Gen","Latitude"]
+  },
+  {
+    id:3, name:"HP Pavilion 15 Gaming GTX 1650", brand:"HP", tags:["hp","gaming"],
+    price:145000, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2025/08/HP-Pavilion-Gaming-15-dk0000-Disassembly-4-324x324.jpg",
+    specs:["Core i5","GTX 1650","Gaming"]
+  },
+  {
+    id:4, name:"Apple MacBook Air 2015 Core i5 256GB SSD", brand:"Apple", tags:["apple"],
+    price:47500, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2025/05/1-1-324x324.jpg",
+    specs:["Core i5","8GB RAM","256GB SSD"]
+  },
+  {
+    id:5, name:"Apple MacBook Pro 15.4\" Core i9 2019", brand:"Apple", tags:["apple"],
+    price:155000, oldPrice:200000, sale:true,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2024/09/bd796976-32b1-4f14-92a4-7cf7f96afdd9-324x324.jpg",
+    specs:["Core i9","2019","15.4\""]
+  },
+  {
+    id:6, name:"Dell Precision 7560 Core i7 RTX 3000", brand:"Dell", tags:["dell","gaming"],
+    price:190000, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2018/08/3-324x324.jpeg",
+    specs:["Core i7","11th Gen","RTX 3000"]
+  },
+  {
+    id:7, name:"HP Elitebook 850 G7 Core i5 10th Gen", brand:"HP", tags:["hp"],
+    price:95000, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2025/05/20240417_154521-324x324.jpg",
+    specs:["Core i5","10th Gen","Elitebook"]
+  },
+  {
+    id:8, name:"Lenovo ThinkPad E550 Core i5 5th Gen", brand:"Lenovo", tags:["lenovo"],
+    price:35000, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2024/03/olx_image_2016-10-08_20-18-10-324x324.jpg",
+    specs:["Core i5","5th Gen","ThinkPad"]
+  },
+  {
+    id:9, name:"Dell Latitude E7270 Core i7 6th Gen", brand:"Dell", tags:["dell"],
+    price:43500, oldPrice:55000, sale:true,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2020/01/WhatsApp-Image-2020-01-07-at-8.37.54-AM1-324x324.jpeg",
+    specs:["Core i7","6th Gen","Ultrabook"]
+  },
+  {
+    id:10, name:"Asus TUF FX504GM Gaming Core i5 GTX 1060", brand:"Asus", tags:["gaming"],
+    price:115000, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-06-22-at-16.19.33-324x324.jpeg",
+    specs:["Core i5","GTX 1060","Gaming"]
+  },
+  {
+    id:11, name:"HP Slim ZBook 15 G7 Core i7 10th Gen", brand:"HP", tags:["hp"],
+    price:160000, oldPrice:null, sale:false,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2021/01/1-324x324.jpg",
+    specs:["Core i7","Nvidia 4GB","Workstation"]
+  },
+  {
+    id:12, name:"Dell Latitude 7400 Core i7 8th Gen", brand:"Dell", tags:["dell"],
+    price:65000, oldPrice:86500, sale:true,
+    img:"https://alwajidlaptops.com/wp-content/uploads/2021/01/WhatsApp-Image-2020-11-16-at-11.28.35-AM-324x324.jpeg",
+    specs:["Core i7","8th Gen","Ultrabook"]
+  }
+];
+
+let activeFilter = 'all';
+let visibleCount = 8;
+let cartCount = 0;
+
+const fmt = n => '₨' + n.toLocaleString('en-PK');
+
+const renderProducts = () => {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const grid = document.getElementById('productGrid');
+  
+  const filtered = products.filter(p => {
+    const matchFilter = activeFilter === 'all' ? true :
+      activeFilter === 'sale' ? p.sale :
+      p.tags.includes(activeFilter);
+    const matchSearch = !q || p.name.toLowerCase().includes(q) || p.brand.toLowerCase().includes(q);
+    return matchFilter && matchSearch;
+  });
+
+  const visible = filtered.slice(0, visibleCount);
+
+  grid.innerHTML = visible.map(p => `
+    <div class="product-card" data-id="${p.id}">
+      <div class="product-img-wrap">
+        <img src="${p.img}" alt="${p.name}" loading="lazy" onerror="this.src='https://placehold.co/400x300/1c1c1e/424245?text=Laptop'">
+        ${p.sale ? '<div class="product-badge">Sale</div>' : ''}
+        <div class="product-wishlist" onclick="event.stopPropagation();wishlist(${p.id})">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-specs">
+          ${p.specs.map(s => `<span class="spec-tag">${s}</span>`).join('')}
+        </div>
+        <div class="product-footer">
+          <div class="price-wrap">
+            ${p.oldPrice ? `<div class="price-old">${fmt(p.oldPrice)}</div>` : ''}
+            <div class="price-new">${fmt(p.price)}</div>
+          </div>
+          <button class="add-to-cart" onclick="addToCart(event, ${p.id}, '${p.name.replace(/'/g,"\\'")}')">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('') || '<div style="grid-column:1/-1;text-align:center;color:var(--gray-4);padding:60px 24px;">No laptops found. Try a different search.</div>';
+};
+
+const setFilter = (f, btn) => {
+  activeFilter = f;
+  visibleCount = 8;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts();
+};
+
+const filterProducts = () => { visibleCount = 8; renderProducts(); };
+
+const loadMore = () => { visibleCount += 4; renderProducts(); };
+
+const addToCart = (e, id, name) => {
+  e.stopPropagation();
+  cartCount++;
+  document.getElementById('cartCount').textContent = cartCount;
+  showToast(`✓ ${name.substring(0,30)}... added!`);
+};
+
+const wishlist = (id) => showToast('♡ Saved to wishlist!');
+
+const showToast = (msg) => {
+  const t = document.getElementById('toast');
+  document.getElementById('toast-msg').textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2800);
+};
+
+// SCROLL ANIMATIONS
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+// NAV SCROLL
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  const backTop = document.getElementById('backTop');
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+  backTop.classList.toggle('show', window.scrollY > 400);
+});
+
+// INIT
+renderProducts();
+</script>
+</body>
+</html>
