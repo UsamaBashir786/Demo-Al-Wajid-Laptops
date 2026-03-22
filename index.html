@@ -885,6 +885,21 @@ footer{background:var(--bg);border-top:1px solid var(--line-l)}
   .shelf-card{flex:0 0 270px}
   .shelf-card-top{height:190px}
 }
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 6998 !important;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    background: rgba(22, 22, 23, .84);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, .08);
+    transition: background .3s, border-color .3s;
+}
 </style>
 </head>
 <body>
