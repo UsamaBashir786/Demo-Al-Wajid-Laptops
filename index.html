@@ -884,6 +884,149 @@ footer{background:var(--bg);border-top:1px solid var(--line-l)}
   font-size:11px;color:var(--t5);text-decoration:line-through;
   margin-left:4px;font-weight:400;
 }
+
+/* ══════════════════════════════════════════════════
+   PREMIUM PRODUCT GRID
+══════════════════════════════════════════════════ */
+
+/* Filter tabs */
+.pf-tabs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.pf-tab{
+  padding:7px 18px;border-radius:980px;
+  font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;
+  border:1.5px solid var(--line-l);background:#fff;color:var(--t3);
+  transition:all .18s;letter-spacing:-.01em;
+}
+.pf-tab:hover{border-color:var(--t1);color:var(--t1)}
+.pf-on{background:var(--t1)!important;border-color:var(--t1)!important;color:#fff!important}
+
+/* Search bar */
+.pf-search-wrap{
+  display:flex;align-items:center;gap:10px;
+  background:var(--bg);border:1.5px solid var(--line-l);
+  border-radius:13px;padding:11px 16px;
+  max-width:380px;transition:border-color .2s;
+}
+.pf-search-wrap:focus-within{border-color:var(--blue);background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,.09)}
+.pf-search-wrap svg{color:var(--t5);flex-shrink:0}
+.pf-search-wrap input{
+  flex:1;font-size:14px;color:var(--t1);background:none;
+  font-family:inherit;outline:none;border:none;min-width:0;
+}
+.pf-search-wrap input::placeholder{color:var(--t5)}
+
+/* Product card */
+.pcard-wrap{
+  background:#fff;border:1px solid var(--line-l);
+  overflow:hidden;cursor:pointer;
+  transition:transform .32s cubic-bezier(.4,0,.2,1),
+             box-shadow .32s cubic-bezier(.4,0,.2,1),
+             border-color .2s;
+  position:relative;
+}
+.pcard-wrap:hover{
+  transform:translateY(-6px);
+  box-shadow:0 28px 64px rgba(0,0,0,.11),0 6px 16px rgba(0,0,0,.05);
+  border-color:rgba(0,113,227,.22);
+  z-index:2;
+}
+
+/* Image area */
+.pcard-img-area{
+  position:relative;overflow:hidden;
+  background:var(--bg);
+  aspect-ratio:4/3;
+  display:flex;align-items:center;justify-content:center;
+}
+.pcard-img-area img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .48s cubic-bezier(.4,0,.2,1);
+}
+.pcard-wrap:hover .pcard-img-area img{transform:scale(1.06)}
+
+/* Badge */
+.pcard-badge{
+  position:absolute;top:12px;left:12px;z-index:3;
+  font-size:10px;font-weight:700;letter-spacing:.04em;
+  text-transform:uppercase;padding:4px 10px;border-radius:980px;
+}
+.pb-sale{background:var(--red);color:#fff;box-shadow:0 2px 8px rgba(255,59,48,.3)}
+.pb-new{background:var(--blue);color:#fff}
+.pb-gaming{background:#76b900;color:#fff}
+.pb-apple{background:#1d1d1f;color:#fff}
+
+/* Wishlist btn */
+.pcard-wish{
+  position:absolute;top:12px;right:12px;z-index:3;
+  width:32px;height:32px;border-radius:50%;
+  background:rgba(255,255,255,.88);backdrop-filter:blur(8px);
+  border:1px solid rgba(0,0,0,.08);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transition:opacity .2s,background .15s;
+  cursor:pointer;
+}
+.pcard-wrap:hover .pcard-wish{opacity:1}
+.pcard-wish:hover{background:#fff;color:var(--red)}
+.pcard-wish svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+
+/* Card body */
+.pcard-body{padding:20px 20px 22px}
+.pcard-brand{
+  font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--t5);margin-bottom:5px;
+}
+.pcard-name{
+  font-size:15px;font-weight:700;color:var(--t1);
+  letter-spacing:-.02em;line-height:1.38;margin-bottom:11px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.pcard-specs{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px}
+.pcard-spec{
+  font-size:11px;font-weight:500;
+  background:var(--bg);border:1px solid var(--line-l);
+  color:var(--t3);padding:3px 9px;border-radius:6px;
+}
+.pcard-spec-highlight{
+  background:rgba(0,113,227,.06);border-color:rgba(0,113,227,.18);
+  color:var(--blue);
+}
+.pcard-foot{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  gap:8px;padding-top:14px;border-top:1px solid var(--line-l);
+}
+.pcard-price-old{font-size:11px;color:var(--t5);text-decoration:line-through;margin-bottom:2px}
+.pcard-price{font-size:21px;font-weight:800;letter-spacing:-.03em;color:var(--t1)}
+.pcard-price-sale{color:var(--red)}
+.pcard-add{
+  width:36px;height:36px;border-radius:50%;flex-shrink:0;
+  background:var(--t1);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .18s,transform .15s;border:none;cursor:pointer;
+}
+.pcard-add:hover{background:var(--blue);transform:scale(1.1)}
+.pcard-add svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2.5}
+
+/* Hero card (first big card) */
+.pcard-hero{grid-column:span 2}
+.pcard-hero .pcard-img-area{aspect-ratio:2/1}
+.pcard-hero .pcard-name{font-size:20px}
+.pcard-hero .pcard-price{font-size:26px}
+
+/* Empty state */
+.p-empty{
+  grid-column:1/-1;text-align:center;
+  padding:80px 20px;color:var(--t4);font-size:15px;
+}
+
+/* No product shown = hidden */
+.pcard-wrap.ph{display:none}
+
+@media(max-width:700px){
+  .pcard-hero{grid-column:span 1}
+  .pcard-hero .pcard-img-area{aspect-ratio:4/3}
+  .pcard-hero .pcard-name{font-size:16px}
+  .pcard-hero .pcard-price{font-size:22px}
+}
 /* ══════════════════════════════════════════════════
    KEYFRAMES
 ══════════════════════════════════════════════════ */
@@ -1076,7 +1219,7 @@ footer{background:var(--bg);border-top:1px solid var(--line-l)}
       </a>
     </div>
     <div class="hero-search">
-      <input type="text" id="searchInput" oninput="renderProducts()" placeholder="Search Dell, HP, Lenovo, MacBook…"/>
+      <input type="text" id="pSearchInput" oninput="pSearch()" placeholder="Search Dell, HP, Lenovo, Apple, Gaming…"/>
       <button class="hero-search-btn">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
       </button>
@@ -1126,543 +1269,60 @@ footer{background:var(--bg);border-top:1px solid var(--line-l)}
   </div>
 </div>
 
-<!-- ══ PRODUCT SECTION ══ -->
-<div class="shelf-sec" id="products">
+<!-- ══ PRODUCTS SECTION ══ -->
+<section id="products" style="background:#fff;padding:96px 0 80px;border-bottom:1px solid var(--line-l)">
 
-  <!-- Header -->
-  <div class="shelf-hdr sr">
-    <div>
-      <p class="shelf-eyebrow">Our Inventory · alwajidlaptops.com</p>
-      <h2 class="shelf-title">20 Laptops In Stock</h2>
+  <!-- Section header -->
+  <div style="max-width:1100px;margin:0 auto 52px;padding:0 28px">
+    <div class="sr" style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:36px">
+      <div>
+        <span class="eyebrow">Our Inventory · alwajidlaptops.com</span>
+        <h2 class="sec-h2" style="margin-top:6px">Premium Used Laptops.</h2>
+        <p class="sec-p" style="max-width:460px">All prices listed. All units quality-checked. Non-painted, non-repaired, not used locally.</p>
+      </div>
+      <a href="https://wa.me/923070021000?text=I want to see full stock" target="_blank"
+        style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue);white-space:nowrap;flex-shrink:0">
+        View Full Stock
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
-    <div class="shelf-arrows">
-      <button class="shelf-arr" id="shelfPrev">
-        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <button class="shelf-arr" id="shelfNext">
-        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
+
+    <!-- Filter tabs -->
+    <div class="sr pf-tabs" style="transition-delay:.06s">
+      <button class="pf-tab pf-on" onclick="pFilter('all',this)">All</button>
+      <button class="pf-tab" onclick="pFilter('hp',this)">HP</button>
+      <button class="pf-tab" onclick="pFilter('dell',this)">Dell</button>
+      <button class="pf-tab" onclick="pFilter('apple',this)">Apple</button>
+      <button class="pf-tab" onclick="pFilter('lenovo',this)">Lenovo</button>
+      <button class="pf-tab" onclick="pFilter('gaming',this)">Gaming</button>
+      <button class="pf-tab" onclick="pFilter('sale',this)">On Sale</button>
+    </div>
+
+    <!-- Search -->
+    <div class="sr pf-search-wrap" style="transition-delay:.1s">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      <input id="pSearchInput" type="text" placeholder="Search by name, spec, brand…" oninput="pSearch()" />
     </div>
   </div>
 
-  <!-- Category tabs -->
-  <div class="cat-tabs-wrap sr" style="transition-delay:.05s">
-    <button class="cat-tab cat-tab-on" onclick="filterCat('all',this)">All (20)</button>
-    <button class="cat-tab" onclick="filterCat('hp',this)">HP (6)</button>
-    <button class="cat-tab" onclick="filterCat('dell',this)">Dell (6)</button>
-    <button class="cat-tab" onclick="filterCat('apple',this)">Apple (2)</button>
-    <button class="cat-tab" onclick="filterCat('lenovo',this)">Lenovo (3)</button>
-    <button class="cat-tab" onclick="filterCat('gaming',this)">Gaming (2)</button>
-    <button class="cat-tab" onclick="filterCat('microsoft',this)">Microsoft (2)</button><button class="cat-tab" onclick="filterCat('sale',this)">On Sale (7)</button>
+  <!-- Products grid -->
+  <div id="pGrid" style="max-width:1100px;margin:0 auto;padding:0 28px;
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2px">
   </div>
 
-  <!-- Shelf scroll -->
-  <div class="shelf-scroll" id="shelfScroll">
-
-    <!-- 1: HP EliteBook 845 G8 -->
-    <article class="shelf-card" data-cat="hp" onclick="openInquiry('HP EliteBook 845 G8 Ryzen 5 5650u','Ryzen 5 5650u · 11th Gen · 8GB RAM · 256GB SSD · Elitebook Grade','HP EliteBook 845 G8')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#e8f0fe 0%,#c7d8fc 100%)">
-        <span class="shelf-pill shelf-pill-blue">Top Seller</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2025/02/1-845-g7-324x324.jpg" alt="HP EliteBook 845 G8" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">HP</p>
-        <h3 class="shelf-card-name">EliteBook 845 G8</h3>
-        <p class="shelf-card-sub">Ryzen 5 5650u · 11th Gen · Elitebook</p>
-        <p class="shelf-card-price">₨75,000 <span class="shelf-old">₨85,000</span></p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('HP EliteBook 845 G8 Ryzen 5 5650u','Ryzen 5 5650u · 11th Gen · 8GB RAM · 256GB SSD','HP EliteBook 845 G8')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: HP EliteBook 845 G8" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 2: Dell Latitude E5550 -->
-    <article class="shelf-card" data-cat="dell" onclick="openInquiry('Dell Latitude E5550 Core i5 5th Gen','Core i5 5th Gen · 8GB RAM · 256GB SSD · 15.6&quot; FHD · Latitude Series','Dell Latitude E5550')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#fef9ec 0%,#fde68a 100%)">
-        <span class="shelf-pill shelf-pill-amber">Dell</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2021/07/WhatsApp-Image-2021-07-01-at-3.06.38-PM-324x324.jpeg" alt="Dell Latitude E5550" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Dell</p>
-        <h3 class="shelf-card-name">Latitude E5550</h3>
-        <p class="shelf-card-sub">Core i5 5th Gen · 15.6" · Latitude</p>
-        <p class="shelf-card-price">₨38,500</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Dell Latitude E5550','Core i5 5th Gen · 8GB RAM · 256GB SSD · 15.6&quot; FHD','Dell Latitude E5550')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Dell Latitude E5550" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 3: HP Pavilion 15 Gaming GTX 1650 -->
-    <article class="shelf-card" data-cat="hp gaming" onclick="openInquiry('HP Pavilion 15 Gaming GTX 1650','Core i5 · GTX 1650 4GB · 8GB RAM · 256GB SSD · 15.6&quot; FHD 144Hz · Gaming','HP Pavilion 15 Gaming')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#0a0a0a 0%,#16213e 100%)">
-        <span class="shelf-pill" style="background:rgba(118,185,0,.18);color:#76b900;border:1px solid rgba(118,185,0,.3)">Gaming</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2025/08/HP-Pavilion-Gaming-15-dk0000-Disassembly-4-324x324.jpg" alt="HP Pavilion Gaming" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">HP</p>
-        <h3 class="shelf-card-name">Pavilion 15 Gaming</h3>
-        <p class="shelf-card-sub">Core i5 · GTX 1650 · 144Hz</p>
-        <p class="shelf-card-price">₨1,45,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('HP Pavilion 15 Gaming GTX 1650','Core i5 · GTX 1650 4GB · 8GB RAM · 15.6&quot; FHD 144Hz','HP Pavilion Gaming GTX 1650')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: HP Pavilion 15 Gaming GTX 1650" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 4: Apple MacBook Air 2015 -->
-    <article class="shelf-card" data-cat="apple" onclick="openInquiry('Apple MacBook Air 2015 Core i5 256GB SSD','Core i5 · 8GB RAM · 256GB SSD · 13.3&quot; Retina · macOS · Silent Fanless','MacBook Air 2015')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#f0f0f3 0%,#e0e0e8 100%)">
-        <span class="shelf-pill" style="background:rgba(0,0,0,.06);color:#1d1d1f">MacBook Air</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2025/05/1-1-324x324.jpg" alt="MacBook Air 2015" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Apple</p>
-        <h3 class="shelf-card-name">MacBook Air 2015</h3>
-        <p class="shelf-card-sub">Core i5 · 8GB · 256GB SSD · 13.3"</p>
-        <p class="shelf-card-price">₨47,500</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('MacBook Air 2015','Core i5 · 8GB RAM · 256GB SSD · 13.3&quot; Retina','MacBook Air 2015')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: MacBook Air 2015" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 5: Apple MacBook Pro 15" Core i9 2019 -->
-    <article class="shelf-card" data-cat="apple sale" onclick="openInquiry('Apple MacBook Pro 15.4&quot; Core i9 2019','Core i9 · 16GB RAM · 512GB SSD · 15.4&quot; Retina · Radeon Pro 555X · Touch Bar','MacBook Pro i9 2019')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#18181b 0%,#27272a 100%)">
-        <span class="shelf-pill" style="background:rgba(255,255,255,.1);color:rgba(255,255,255,.75)">MacBook Pro</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2024/09/bd796976-32b1-4f14-92a4-7cf7f96afdd9-324x324.jpg" alt="MacBook Pro i9" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Apple</p>
-        <h3 class="shelf-card-name">MacBook Pro 15.4" i9</h3>
-        <p class="shelf-card-sub">Core i9 · 16GB · 512GB · 2019</p>
-        <p class="shelf-card-price">₨1,55,000 <span class="shelf-old">₨2,00,000</span></p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('MacBook Pro 15.4&quot; i9 2019','Core i9 · 16GB RAM · 512GB SSD · Retina · Touch Bar','MacBook Pro i9 2019')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: MacBook Pro i9 2019" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 6: Dell Precision 7560 -->
-    <article class="shelf-card" data-cat="dell gaming" onclick="openInquiry('Dell Precision 7560 Core i7 RTX 3000','Core i7 11th Gen · RTX A3000 6GB · 32GB RAM · 512GB NVMe · 15.6&quot; FHD · Workstation','Dell Precision 7560')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#1c1c1e 0%,#2c2c2e 100%)">
-        <span class="shelf-pill" style="background:rgba(99,102,241,.2);color:#818cf8;border:1px solid rgba(99,102,241,.3)">Workstation</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2018/08/3-324x324.jpeg" alt="Dell Precision 7560" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Dell</p>
-        <h3 class="shelf-card-name">Precision 7560</h3>
-        <p class="shelf-card-sub">Core i7 11th · RTX 3000 · Pro</p>
-        <p class="shelf-card-price">₨1,90,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Dell Precision 7560','Core i7 11th Gen · RTX A3000 6GB · 32GB RAM · 512GB NVMe','Dell Precision 7560')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Dell Precision 7560" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 7: HP EliteBook 850 G7 -->
-    <article class="shelf-card" data-cat="hp" onclick="openInquiry('HP EliteBook 850 G7 Core i5 10th Gen','Core i5 10th Gen · 8GB RAM · 256GB SSD · 15.6&quot; FHD · Backlit KB · Fingerprint','HP EliteBook 850 G7')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#e8f0fe 0%,#c7d8fc 100%)">
-        <span class="shelf-pill shelf-pill-blue">EliteBook</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2025/05/20240417_154521-324x324.jpg" alt="HP EliteBook 850 G7" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">HP</p>
-        <h3 class="shelf-card-name">EliteBook 850 G7</h3>
-        <p class="shelf-card-sub">Core i5 10th Gen · 15.6" · FHD</p>
-        <p class="shelf-card-price">₨95,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('HP EliteBook 850 G7','Core i5 10th Gen · 8GB RAM · 256GB SSD · 15.6&quot; FHD','HP EliteBook 850 G7')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: HP EliteBook 850 G7" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 8: Lenovo ThinkPad E550 -->
-    <article class="shelf-card" data-cat="lenovo" onclick="openInquiry('Lenovo ThinkPad E550 Core i5 5th Gen','Core i5 5th Gen · 8GB RAM · 256GB SSD · 15.6&quot; FHD · ThinkPad Build · Dual Battery Ready','Lenovo ThinkPad E550')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#f3e8ff 0%,#ddd6fe 100%)">
-        <span class="shelf-pill" style="background:rgba(168,85,247,.12);color:#581c87">ThinkPad</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2024/03/olx_image_2016-10-08_20-18-10-324x324.jpg" alt="Lenovo ThinkPad E550" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Lenovo</p>
-        <h3 class="shelf-card-name">ThinkPad E550</h3>
-        <p class="shelf-card-sub">Core i5 5th Gen · Iconic build</p>
-        <p class="shelf-card-price">₨35,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Lenovo ThinkPad E550','Core i5 5th Gen · 8GB RAM · 256GB SSD · 15.6&quot; FHD · ThinkPad','Lenovo ThinkPad E550')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Lenovo ThinkPad E550" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 9: Dell Latitude E7270 -->
-    <article class="shelf-card" data-cat="dell sale" onclick="openInquiry('Dell Latitude E7270 Core i7 6th Gen','Core i7 6th Gen · 8GB RAM · 512GB SSD · 12.5&quot; FHD · Ultra-thin Ultrabook','Dell Latitude E7270')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#fefce8 0%,#fef08a 100%)">
-        <span class="shelf-pill shelf-pill-amber">Sale</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2020/01/WhatsApp-Image-2020-01-07-at-8.37.54-AM1-324x324.jpeg" alt="Dell Latitude E7270" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Dell</p>
-        <h3 class="shelf-card-name">Latitude E7270</h3>
-        <p class="shelf-card-sub">Core i7 6th · Ultra-thin · 12.5"</p>
-        <p class="shelf-card-price">₨43,500 <span class="shelf-old">₨55,000</span></p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Dell Latitude E7270','Core i7 6th Gen · 8GB RAM · 512GB SSD · 12.5&quot; FHD · Ultrabook','Dell Latitude E7270')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Dell Latitude E7270" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 10: Asus TUF FX504GM Gaming -->
-    <article class="shelf-card" data-cat="gaming" onclick="openInquiry('Asus TUF FX504GM Gaming Core i5 GTX 1060','Core i5 8th Gen · GTX 1060 6GB · 8GB RAM · 256GB SSD · 15.6&quot; FHD 120Hz','Asus TUF FX504GM Gaming')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#0a0a0a 0%,#16213e 100%)">
-        <span class="shelf-pill" style="background:rgba(118,185,0,.18);color:#76b900;border:1px solid rgba(118,185,0,.3)">GTX 1060</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-06-22-at-16.19.33-324x324.jpeg" alt="Asus TUF FX504GM" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Asus</p>
-        <h3 class="shelf-card-name">TUF FX504GM Gaming</h3>
-        <p class="shelf-card-sub">Core i5 · GTX 1060 6GB · 120Hz</p>
-        <p class="shelf-card-price">₨1,15,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Asus TUF FX504GM','Core i5 8th Gen · GTX 1060 6GB · 8GB RAM · 15.6&quot; FHD 120Hz','Asus TUF FX504GM Gaming')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Asus TUF FX504GM Gaming" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 11: HP ZBook 15 G7 -->
-    <article class="shelf-card" data-cat="hp" onclick="openInquiry('HP Slim ZBook 15 G7 Core i7 10th Gen','Core i7 10th Gen · Nvidia Quadro T1000 4GB · 16GB RAM · 512GB NVMe · 15.6&quot; FHD · Workstation','HP ZBook 15 G7')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#d1fae5 0%,#a7f3d0 100%)">
-        <span class="shelf-pill shelf-pill-green">Workstation</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2021/01/1-324x324.jpg" alt="HP ZBook 15 G7" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">HP</p>
-        <h3 class="shelf-card-name">ZBook 15 G7</h3>
-        <p class="shelf-card-sub">Core i7 10th · Nvidia 4GB · 15.6"</p>
-        <p class="shelf-card-price">₨1,60,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('HP ZBook 15 G7','Core i7 10th Gen · Nvidia 4GB · 16GB RAM · 512GB NVMe · 15.6&quot; FHD','HP ZBook 15 G7')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: HP ZBook 15 G7" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 12: Dell Latitude 7400 -->
-    <article class="shelf-card" data-cat="dell sale" onclick="openInquiry('Dell Latitude 7400 Core i7 8th Gen','Core i7 8th Gen · 16GB RAM · 512GB NVMe SSD · 14&quot; FHD · Ultrabook · Carbon Fiber','Dell Latitude 7400')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#fef9ec 0%,#fde68a 100%)">
-        <span class="shelf-pill shelf-pill-amber">Sale</span>
-        <img src="https://alwajidlaptops.com/wp-content/uploads/2021/01/WhatsApp-Image-2020-11-16-at-11.28.35-AM-324x324.jpeg" alt="Dell Latitude 7400" class="shelf-card-img" onerror="this.style.display='none'"/>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Dell</p>
-        <h3 class="shelf-card-name">Latitude 7400</h3>
-        <p class="shelf-card-sub">Core i7 8th · 16GB · Carbon Fiber</p>
-        <p class="shelf-card-price">₨65,000 <span class="shelf-old">₨86,500</span></p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Dell Latitude 7400','Core i7 8th Gen · 16GB RAM · 512GB NVMe · 14&quot; FHD · Carbon Fiber','Dell Latitude 7400')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Dell Latitude 7400" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-
-    <!-- 13: HP EliteBook 1030 G4 x360 Touch -->
-    <article class="shelf-card" data-cat="hp" onclick="openInquiry('HP EliteBook 1030 G4 x360 Touch','Core i5 8th Gen · 8GB DDR4 · 256GB SSD · 13.3&quot; FHD Touch x360 · Bang & Olufsen Audio · USB-C','HP EliteBook 1030 G4 x360')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#e0f2fe 0%,#bae6fd 100%)">
-        <span class="shelf-pill shelf-pill-blue">x360 Touch</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <rect x="10" y="8" width="140" height="88" rx="8" fill="#0369a1" fill-opacity=".15"/>
-            <rect x="18" y="15" width="124" height="75" rx="5" fill="#0ea5e9" fill-opacity=".2"/>
-            <rect x="26" y="22" width="108" height="58" rx="3" fill="white" fill-opacity=".6"/>
-            <rect x="34" y="30" width="60" height="5" rx="2.5" fill="#0369a1" fill-opacity=".5"/>
-            <rect x="34" y="40" width="45" height="3" rx="1.5" fill="#0ea5e9" fill-opacity=".5"/>
-            <rect x="34" y="48" width="80" height="3" rx="1.5" fill="#bae6fd" fill-opacity=".7"/>
-            <rect x="34" y="56" width="55" height="3" rx="1.5" fill="#bae6fd" fill-opacity=".6"/>
-            <line x1="10" y1="96" x2="150" y2="96" stroke="#bae6fd" stroke-width="1.5"/>
-            <rect x="4" y="96" width="152" height="8" rx="4" fill="white" fill-opacity=".4"/>
-            <rect x="58" y="99" width="44" height="3" rx="1.5" fill="#bae6fd" fill-opacity=".5"/>
-            <!-- Touch pen hint -->
-            <rect x="118" y="18" width="4" height="30" rx="2" fill="#0369a1" fill-opacity=".35" transform="rotate(15,118,18)"/>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">HP</p>
-        <h3 class="shelf-card-name">EliteBook 1030 G4 x360</h3>
-        <p class="shelf-card-sub">Core i5 8th · 13.3" Touch · Convertible</p>
-        <p class="shelf-card-price">₨85,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('HP EliteBook 1030 G4 x360','Core i5 8th Gen · 8GB DDR4 · 256GB SSD · 13.3&quot; FHD Touch x360 · Bang & Olufsen Audio','HP EliteBook 1030 G4 x360')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: HP EliteBook 1030 G4 x360" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 14: Microsoft Surface Pro 5 -->
-    <article class="shelf-card" data-cat="microsoft" onclick="openInquiry('Microsoft Surface Pro 5 Core i5 7th Gen','Core i5 7th Gen · 8GB DDR4 · 128GB SSD · 12.3&quot; Touch 2-in-1 Tablet+Laptop · Type Cover Keyboard Included','Microsoft Surface Pro 5')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#f0fdf4 0%,#bbf7d0 100%)">
-        <span class="shelf-pill" style="background:rgba(0,120,212,.12);color:#005a9e">Surface Pro</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <!-- Surface Pro tablet shape -->
-            <rect x="22" y="6" width="116" height="88" rx="8" fill="#0078d4" fill-opacity=".12"/>
-            <rect x="28" y="11" width="104" height="76" rx="5" fill="#0078d4" fill-opacity=".18"/>
-            <rect x="34" y="17" width="92" height="64" rx="3" fill="white" fill-opacity=".65"/>
-            <!-- Screen content -->
-            <circle cx="80" cy="44" r="16" fill="#0078d4" fill-opacity=".15"/>
-            <rect x="48" y="36" width="20" height="3" rx="1.5" fill="#0078d4" fill-opacity=".4"/>
-            <rect x="72" y="36" width="40" height="3" rx="1.5" fill="#0078d4" fill-opacity=".3"/>
-            <rect x="48" y="44" width="64" height="2.5" rx="1.2" fill="#bfdbfe" fill-opacity=".6"/>
-            <rect x="48" y="51" width="48" height="2.5" rx="1.2" fill="#bfdbfe" fill-opacity=".5"/>
-            <!-- Kickstand -->
-            <rect x="136" y="18" width="4" height="60" rx="2" fill="#0078d4" fill-opacity=".3"/>
-            <!-- Type cover -->
-            <rect x="22" y="96" width="116" height="18" rx="4" fill="#0078d4" fill-opacity=".1" stroke="#0078d4" stroke-opacity=".2" stroke-width="1"/>
-            <rect x="26" y="100" width="108" height="10" rx="2" fill="#0078d4" fill-opacity=".08"/>
-            <!-- Windows logo -->
-            <g transform="translate(72,47)">
-              <rect x="0" y="0" width="7" height="7" fill="#0078d4" fill-opacity=".6"/>
-              <rect x="8" y="0" width="7" height="7" fill="#0078d4" fill-opacity=".6"/>
-              <rect x="0" y="8" width="7" height="7" fill="#0078d4" fill-opacity=".6"/>
-              <rect x="8" y="8" width="7" height="7" fill="#0078d4" fill-opacity=".6"/>
-            </g>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Microsoft</p>
-        <h3 class="shelf-card-name">Surface Pro 5</h3>
-        <p class="shelf-card-sub">Core i5 7th · 8GB · 128GB · 2-in-1</p>
-        <p class="shelf-card-price">₨45,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Microsoft Surface Pro 5','Core i5 7th Gen · 8GB DDR4 · 128GB SSD · 12.3&quot; Touch · Type Cover Included','Microsoft Surface Pro 5')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Microsoft Surface Pro 5" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 15: Lenovo ThinkPad T14s Core i5 10th Gen -->
-    <article class="shelf-card" data-cat="lenovo" onclick="openInquiry('Lenovo ThinkPad T14s Core i5 10th Gen','Core i5 10th Gen · 16GB DDR4 · 256GB NVMe SSD · 14.1&quot; FHD IPS Anti-Glare · Backlit KB · Fingerprint','Lenovo ThinkPad T14s')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#f3e8ff 0%,#ddd6fe 100%)">
-        <span class="shelf-pill" style="background:rgba(124,58,237,.12);color:#4c1d95">ThinkPad</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <rect x="10" y="8" width="140" height="88" rx="8" fill="#1e1b4b" fill-opacity=".12"/>
-            <rect x="18" y="14" width="124" height="76" rx="5" fill="#312e81" fill-opacity=".15"/>
-            <rect x="26" y="20" width="108" height="60" rx="3" fill="white" fill-opacity=".6"/>
-            <!-- ThinkPad red dot hint -->
-            <circle cx="80" cy="46" r="4" fill="#dc2626" fill-opacity=".6"/>
-            <rect x="34" y="28" width="70" height="5" rx="2.5" fill="#4338ca" fill-opacity=".4"/>
-            <rect x="34" y="38" width="50" height="3" rx="1.5" fill="#6366f1" fill-opacity=".4"/>
-            <rect x="34" y="46" width="90" height="3" rx="1.5" fill="#c7d2fe" fill-opacity=".6"/>
-            <rect x="34" y="54" width="65" height="3" rx="1.5" fill="#c7d2fe" fill-opacity=".5"/>
-            <!-- ThinkPad logo area -->
-            <rect x="122" y="20" width="10" height="8" rx="2" fill="#1e1b4b" fill-opacity=".2"/>
-            <line x1="10" y1="96" x2="150" y2="96" stroke="#c7d2fe" stroke-width="1.2"/>
-            <rect x="4" y="96" width="152" height="8" rx="4" fill="white" fill-opacity=".4"/>
-            <rect x="58" y="99" width="44" height="3" rx="1.5" fill="#c7d2fe" fill-opacity=".5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Lenovo</p>
-        <h3 class="shelf-card-name">ThinkPad T14s</h3>
-        <p class="shelf-card-sub">Core i5 10th · 16GB · 256GB NVMe</p>
-        <p class="shelf-card-price">₨75,500</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Lenovo ThinkPad T14s','Core i5 10th Gen · 16GB DDR4 · 256GB NVMe · 14.1&quot; FHD IPS · Backlit KB','Lenovo ThinkPad T14s')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Lenovo ThinkPad T14s" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 16: Lenovo ThinkPad X1 Carbon -->
-    <article class="shelf-card" data-cat="lenovo sale" onclick="openInquiry('Lenovo ThinkPad X1 Carbon Ultrabook Core i7 5th Gen','Core i7 5th Gen · 8GB DDR3L · 256GB SSD · 14&quot; FHD · Backlit KB · HDMI · Carbon Fiber Ultrabook · 1.13kg','Lenovo X1 Carbon')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#1e1b4b 0%,#312e81 100%)">
-        <span class="shelf-pill" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.8)">X1 Carbon</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <rect x="10" y="8" width="140" height="88" rx="8" fill="white" fill-opacity=".05"/>
-            <rect x="18" y="14" width="124" height="76" rx="5" fill="white" fill-opacity=".04"/>
-            <rect x="26" y="20" width="108" height="60" rx="3" fill="white" fill-opacity=".06"/>
-            <defs><linearGradient id="x1g" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#6366f1" stop-opacity=".5"/><stop offset="100%" stop-color="#a855f7" stop-opacity=".35"/></linearGradient></defs>
-            <rect x="26" y="20" width="108" height="60" rx="3" fill="url(#x1g)"/>
-            <rect x="34" y="30" width="70" height="6" rx="3" fill="white" fill-opacity=".25"/>
-            <rect x="34" y="42" width="50" height="4" rx="2" fill="white" fill-opacity=".12"/>
-            <rect x="34" y="52" width="90" height="3" rx="1.5" fill="#818cf8" fill-opacity=".4"/>
-            <rect x="34" y="60" width="65" height="3" rx="1.5" fill="#818cf8" fill-opacity=".3"/>
-            <!-- Weight indicator -->
-            <text x="120" y="72" font-size="7" fill="white" fill-opacity=".4" font-family="sans-serif" font-weight="700">1.13kg</text>
-            <line x1="10" y1="96" x2="150" y2="96" stroke="rgba(255,255,255,.1)" stroke-width="1.2"/>
-            <rect x="4" y="96" width="152" height="8" rx="4" fill="white" fill-opacity=".05"/>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Lenovo</p>
-        <h3 class="shelf-card-name">ThinkPad X1 Carbon</h3>
-        <p class="shelf-card-sub">Core i7 5th · Ultra-thin · 1.13kg</p>
-        <p class="shelf-card-price">₨53,500 <span class="shelf-old">₨65,000</span></p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Lenovo X1 Carbon Ultrabook','Core i7 5th Gen · 8GB DDR3L · 256GB SSD · 14&quot; FHD · Carbon Fiber · 1.13kg','Lenovo X1 Carbon')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Lenovo X1 Carbon" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 17: Dell Latitude 5290 2-in-1 Touch -->
-    <article class="shelf-card" data-cat="dell" onclick="openInquiry('Dell Latitude 5290 2in1 Core i5 8th Gen Touch','Core i5 8th Gen · 8GB DDR4 · 256GB SSD · 12.5&quot; Touch Convertible · USB-C · HDMI · 30 Days Warranty','Dell Latitude 5290 2in1')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#fef3c7 0%,#fde68a 100%)">
-        <span class="shelf-pill shelf-pill-amber">2-in-1 Touch</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <!-- Tablet mode illustration -->
-            <rect x="20" y="8" width="120" height="90" rx="10" fill="#d97706" fill-opacity=".12"/>
-            <rect x="27" y="14" width="106" height="76" rx="6" fill="#fbbf24" fill-opacity=".2"/>
-            <rect x="34" y="20" width="92" height="63" rx="4" fill="white" fill-opacity=".65"/>
-            <!-- Touch circles -->
-            <circle cx="65" cy="52" r="6" fill="#d97706" fill-opacity=".2" stroke="#d97706" stroke-opacity=".3" stroke-width="1.5"/>
-            <circle cx="95" cy="38" r="4" fill="#d97706" fill-opacity=".15" stroke="#d97706" stroke-opacity=".25" stroke-width="1"/>
-            <!-- App grid -->
-            <rect x="42" y="28" width="18" height="14" rx="3" fill="#fbbf24" fill-opacity=".4"/>
-            <rect x="64" y="28" width="18" height="14" rx="3" fill="#fbbf24" fill-opacity=".3"/>
-            <rect x="86" y="28" width="18" height="14" rx="3" fill="#fbbf24" fill-opacity=".4"/>
-            <rect x="108" y="28" width="12" height="14" rx="3" fill="#fbbf24" fill-opacity=".25"/>
-            <!-- Home button -->
-            <circle cx="80" cy="93" r="5" fill="#d97706" fill-opacity=".25" stroke="#d97706" stroke-opacity=".3" stroke-width="1"/>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Dell</p>
-        <h3 class="shelf-card-name">Latitude 5290 2-in-1</h3>
-        <p class="shelf-card-sub">Core i5 8th · 12.5" Touch · USB-C</p>
-        <p class="shelf-card-price">₨45,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Dell Latitude 5290 2in1','Core i5 8th Gen · 8GB DDR4 · 256GB SSD · 12.5&quot; Touch · USB-C · HDMI','Dell Latitude 5290 2in1')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Dell Latitude 5290 2in1 Touch" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 18: Microsoft Surface Pro 4 -->
-    <article class="shelf-card" data-cat="microsoft" onclick="openInquiry('Microsoft Surface Pro 4 Core i5 6th Gen','Core i5 6th Gen · 8GB RAM · 256GB SSD · 13&quot; 2K Resolution Display · With Keyboard · Touch Screen','Microsoft Surface Pro 4')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#e0f2fe 0%,#bae6fd 100%)">
-        <span class="shelf-pill" style="background:rgba(0,120,212,.12);color:#005a9e">2K Display</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <rect x="22" y="6" width="116" height="88" rx="8" fill="#0078d4" fill-opacity=".1"/>
-            <rect x="28" y="11" width="104" height="76" rx="5" fill="#0078d4" fill-opacity=".15"/>
-            <rect x="34" y="17" width="92" height="64" rx="3" fill="white" fill-opacity=".65"/>
-            <!-- 2K label -->
-            <text x="80" y="52" font-size="18" fill="#0078d4" fill-opacity=".2" font-family="sans-serif" font-weight="900" text-anchor="middle">2K</text>
-            <rect x="42" y="28" width="76" height="4" rx="2" fill="#0078d4" fill-opacity=".3"/>
-            <rect x="42" y="37" width="55" height="3" rx="1.5" fill="#7dd3fc" fill-opacity=".5"/>
-            <rect x="42" y="57" width="76" height="3" rx="1.5" fill="#bae6fd" fill-opacity=".5"/>
-            <rect x="42" y="64" width="45" height="3" rx="1.5" fill="#bae6fd" fill-opacity=".4"/>
-            <rect x="136" y="18" width="4" height="60" rx="2" fill="#0078d4" fill-opacity=".25"/>
-            <rect x="22" y="96" width="116" height="18" rx="4" fill="#0078d4" fill-opacity=".08" stroke="#0078d4" stroke-opacity=".18" stroke-width="1"/>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Microsoft</p>
-        <h3 class="shelf-card-name">Surface Pro 4</h3>
-        <p class="shelf-card-sub">Core i5 6th · 8GB · 256GB · 2K Display</p>
-        <p class="shelf-card-price">₨45,000</p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Microsoft Surface Pro 4','Core i5 6th Gen · 8GB RAM · 256GB SSD · 13&quot; 2K Display · With Keyboard','Microsoft Surface Pro 4')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Microsoft Surface Pro 4" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 19: HP EliteBook 840 G8 Core i5 11th Gen -->
-    <article class="shelf-card" data-cat="hp" onclick="openInquiry('HP EliteBook 840 G8 Core i5 11th Gen','Core i5 11th Gen · 16GB DDR4 · 256GB NVMe SSD · 14&quot; FHD · Intel Iris Xe · Thunderbolt 4 · Backlit KB','HP EliteBook 840 G8')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#eff6ff 0%,#bfdbfe 100%)">
-        <span class="shelf-pill shelf-pill-blue">11th Gen</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <rect x="10" y="8" width="140" height="88" rx="8" fill="#1d4ed8" fill-opacity=".1"/>
-            <rect x="18" y="14" width="124" height="76" rx="5" fill="#3b82f6" fill-opacity=".15"/>
-            <rect x="26" y="20" width="108" height="60" rx="3" fill="white" fill-opacity=".7"/>
-            <!-- Intel Iris Xe-style gradient hint -->
-            <defs><linearGradient id="irisxe" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3b82f6" stop-opacity=".4"/><stop offset="100%" stop-color="#60a5fa" stop-opacity=".2"/></linearGradient></defs>
-            <rect x="26" y="20" width="108" height="30" rx="3" fill="url(#irisxe)"/>
-            <rect x="34" y="28" width="70" height="6" rx="3" fill="white" fill-opacity=".5"/>
-            <rect x="34" y="40" width="50" height="3" rx="1.5" fill="#bfdbfe" fill-opacity=".7"/>
-            <rect x="34" y="48" width="88" height="3" rx="1.5" fill="#dbeafe" fill-opacity=".6"/>
-            <rect x="34" y="56" width="60" height="3" rx="1.5" fill="#dbeafe" fill-opacity=".5"/>
-            <!-- Thunderbolt icon hint -->
-            <text x="120" y="74" font-size="12" fill="#1d4ed8" fill-opacity=".35" font-family="sans-serif" font-weight="900">⚡</text>
-            <line x1="10" y1="96" x2="150" y2="96" stroke="#bfdbfe" stroke-width="1.2"/>
-            <rect x="4" y="96" width="152" height="8" rx="4" fill="white" fill-opacity=".45"/>
-            <rect x="58" y="99" width="44" height="3" rx="1.5" fill="#bfdbfe" fill-opacity=".5"/>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">HP</p>
-        <h3 class="shelf-card-name">EliteBook 840 G8</h3>
-        <p class="shelf-card-sub">Core i5 11th · 16GB · Thunderbolt 4</p>
-        <p class="shelf-card-price">₨1,05,000 <span class="shelf-old">₨1,25,000</span></p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('HP EliteBook 840 G8 Core i5 11th','Core i5 11th Gen · 16GB DDR4 · 256GB NVMe · 14&quot; FHD · Thunderbolt 4 · Backlit KB','HP EliteBook 840 G8')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: HP EliteBook 840 G8 Core i5 11th" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 20: Dell Latitude 5420 Core i5 11th Gen -->
-    <article class="shelf-card" data-cat="dell sale" onclick="openInquiry('Dell Latitude 5420 Core i5 11th Gen','Core i5 11th Gen · 16GB DDR4 · 256GB SSD · 14&quot; FHD · Intel Iris Xe · Thunderbolt 4 · Windows 11 Pro','Dell Latitude 5420')">
-      <div class="shelf-card-top" style="background:linear-gradient(160deg,#fefce8 0%,#fef08a 100%)">
-        <span class="shelf-pill shelf-pill-amber">Sale</span>
-        <div class="shelf-card-fallback">
-          <svg viewBox="0 0 160 120" width="160" fill="none">
-            <rect x="10" y="8" width="140" height="88" rx="8" fill="#854d0e" fill-opacity=".09"/>
-            <rect x="18" y="14" width="124" height="76" rx="5" fill="#a16207" fill-opacity=".12"/>
-            <rect x="26" y="20" width="108" height="60" rx="3" fill="white" fill-opacity=".7"/>
-            <rect x="34" y="28" width="72" height="5" rx="2.5" fill="#ca8a04" fill-opacity=".45"/>
-            <rect x="34" y="38" width="52" height="3" rx="1.5" fill="#d97706" fill-opacity=".4"/>
-            <rect x="34" y="46" width="88" height="3" rx="1.5" fill="#fde68a" fill-opacity=".7"/>
-            <rect x="34" y="54" width="60" height="3" rx="1.5" fill="#fde68a" fill-opacity=".6"/>
-            <!-- 11th Gen badge -->
-            <rect x="94" y="26" width="32" height="14" rx="5" fill="#ca8a04" fill-opacity=".18"/>
-            <text x="110" y="36" font-size="7.5" fill="#92400e" font-family="sans-serif" font-weight="700" text-anchor="middle" fill-opacity=".7">11th Gen</text>
-            <line x1="10" y1="96" x2="150" y2="96" stroke="#fde68a" stroke-width="1.2"/>
-            <rect x="4" y="96" width="152" height="8" rx="4" fill="white" fill-opacity=".45"/>
-          </svg>
-        </div>
-      </div>
-      <div class="shelf-card-body">
-        <p class="shelf-card-brand">Dell</p>
-        <h3 class="shelf-card-name">Latitude 5420</h3>
-        <p class="shelf-card-sub">Core i5 11th · 16GB · 256GB · FHD</p>
-        <p class="shelf-card-price">₨75,000 <span class="shelf-old">₨90,000</span></p>
-        <div class="shelf-card-links">
-          <button class="shelf-link shelf-link-blue" onclick="event.stopPropagation();openInquiry('Dell Latitude 5420','Core i5 11th Gen · 16GB DDR4 · 256GB SSD · 14&quot; FHD · Intel Iris Xe · Windows 11 Pro','Dell Latitude 5420')">Inquire <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
-          <a href="https://wa.me/923070021000?text=Inquiry: Dell Latitude 5420" class="shelf-link" onclick="event.stopPropagation()" target="_blank">WhatsApp <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
-        </div>
-      </div>
-    </article>
-
-  </div><!-- /shelf-scroll -->
-
-  <div class="shelf-progress-wrap">
-    <div class="shelf-progress" id="shelfProg"></div>
+  <!-- Load more -->
+  <div id="pLoadMore" style="text-align:center;margin-top:52px;padding:0 28px">
+    <button onclick="pShowMore()" id="pMoreBtn"
+      style="display:inline-flex;align-items:center;gap:8px;
+      background:#fff;border:1.5px solid var(--line);color:var(--t1);
+      font-size:15px;font-weight:600;padding:13px 32px;border-radius:980px;
+      cursor:pointer;transition:all .2s;font-family:inherit">
+      Load More Laptops
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </button>
   </div>
-</div>
+
+</section>
 
 <!-- BRANDS MARQUEE -->
 <div class="brands-sec">
@@ -2014,7 +1674,7 @@ if(btrack){
 }
 
 /* ══ PRODUCT SEARCH (basic) ════════════════════════ */
-function renderProducts(){}// shelf is always visible; search filters via JS if needed
+
 
 /* ══ SHELF LOGIC ══════════════════════════════════ */
 (function(){
@@ -2057,6 +1717,208 @@ function renderProducts(){}// shelf is always visible; search filters via JS if 
   window.addEventListener('load',updateShelf);window.addEventListener('resize',updateShelf);updateShelf();
 })();
 
+
+
+/* ══ PREMIUM PRODUCT GRID ══════════════════════════════════════════ */
+const PRODUCTS = [
+  {
+    id:1, brand:'HP', name:'EliteBook 845 G8 Ryzen 5 5650u', tags:['hp'],
+    price:75000, old:85000, sale:true, hero:true,
+    badge:'sale', badgeTxt:'Sale',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2025/02/1-845-g7-324x324.jpg',
+    specs:['Ryzen 5 5650u','11th Gen','8GB RAM','256GB SSD','Elitebook'],
+    highlight:'Ryzen 5 5650u'
+  },
+  {
+    id:2, brand:'Apple', name:'MacBook Pro 15.4" Core i9 2019', tags:['apple'],
+    price:155000, old:200000, sale:true,
+    badge:'apple', badgeTxt:'MacBook Pro',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2024/09/bd796976-32b1-4f14-92a4-7cf7f96afdd9-324x324.jpg',
+    specs:['Core i9','32GB RAM','512GB SSD','15.4" Retina','Radeon 4GB'],
+    highlight:'Core i9'
+  },
+  {
+    id:3, brand:'Dell', name:'Precision 7560 Core i7 RTX 3000', tags:['dell','gaming'],
+    price:190000, old:null, sale:false,
+    badge:'gaming', badgeTxt:'Workstation',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2018/08/3-324x324.jpeg',
+    specs:['Core i7 11th','RTX A3000 6GB','32GB RAM','512GB NVMe'],
+    highlight:'RTX A3000'
+  },
+  {
+    id:4, brand:'HP', name:'ZBook 15 G7 Core i7 Nvidia Quadro', tags:['hp'],
+    price:160000, old:null, sale:false,
+    badge:'new', badgeTxt:'Workstation',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2021/01/1-324x324.jpg',
+    specs:['Core i7 10th','Nvidia 4GB','16GB RAM','512GB NVMe','15.6" FHD'],
+    highlight:'Nvidia Quadro'
+  },
+  {
+    id:5, brand:'HP', name:'EliteBook 850 G7 Core i5 10th Gen', tags:['hp'],
+    price:95000, old:null, sale:false,
+    badge:'new', badgeTxt:'EliteBook',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2025/05/20240417_154521-324x324.jpg',
+    specs:['Core i5 10th','8GB DDR4','256GB SSD','15.6" FHD','Backlit KB'],
+    highlight:'10th Gen'
+  },
+  {
+    id:6, brand:'Apple', name:'MacBook Air 2015 Core i5 256GB', tags:['apple'],
+    price:47500, old:null, sale:false,
+    badge:'apple', badgeTxt:'MacBook Air',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2025/05/1-1-324x324.jpg',
+    specs:['Core i5','8GB RAM','256GB SSD','13.3" Retina','Silent'],
+    highlight:'Retina Display'
+  },
+  {
+    id:7, brand:'Asus', name:'TUF FX504GM Gaming Core i5 GTX 1060', tags:['gaming'],
+    price:115000, old:null, sale:false,
+    badge:'gaming', badgeTxt:'Gaming',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2018/09/WhatsApp-Image-2018-06-22-at-16.19.33-324x324.jpeg',
+    specs:['Core i5 8th','GTX 1060 6GB','8GB RAM','256GB SSD','15.6" 120Hz'],
+    highlight:'GTX 1060 6GB'
+  },
+  {
+    id:8, brand:'Dell', name:'Latitude 7400 Core i7 8th Gen', tags:['dell'],
+    price:65000, old:86500, sale:true,
+    badge:'sale', badgeTxt:'Sale',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2021/01/WhatsApp-Image-2020-11-16-at-11.28.35-AM-324x324.jpeg',
+    specs:['Core i7 8th','16GB DDR4','512GB NVMe','14" FHD','Carbon Fiber'],
+    highlight:'16GB DDR4'
+  },
+  {
+    id:9, brand:'HP', name:'EliteBook 845 G8 Ryzen 5 (Fresh Stock)', tags:['hp'],
+    price:75000, old:85000, sale:true,
+    badge:'sale', badgeTxt:'Sale',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2025/02/1-845-g7-324x324.jpg',
+    specs:['Ryzen 5','11th Gen','8GB DDR4','256GB SSD'],
+    highlight:'Ryzen 5'
+  },
+  {
+    id:10, brand:'Dell', name:'Latitude E7270 Core i7 6th Gen Ultrabook', tags:['dell'],
+    price:43500, old:55000, sale:true,
+    badge:'sale', badgeTxt:'Sale',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2020/01/WhatsApp-Image-2020-01-07-at-8.37.54-AM1-324x324.jpeg',
+    specs:['Core i7 6th','8GB DDR4','512GB SSD','12.5" FHD','Ultra-thin'],
+    highlight:'Ultra-thin'
+  },
+  {
+    id:11, brand:'HP', name:'Pavilion 15 Gaming GTX 1650', tags:['hp','gaming'],
+    price:145000, old:null, sale:false,
+    badge:'gaming', badgeTxt:'Gaming',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2025/08/HP-Pavilion-Gaming-15-dk0000-Disassembly-4-324x324.jpg',
+    specs:['Core i5','GTX 1650 4GB','8GB DDR4','256GB SSD','15.6" FHD'],
+    highlight:'GTX 1650'
+  },
+  {
+    id:12, brand:'Lenovo', name:'ThinkPad E550 Core i5 5th Gen', tags:['lenovo'],
+    price:35000, old:null, sale:false,
+    badge:'new', badgeTxt:'ThinkPad',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2024/03/olx_image_2016-10-08_20-18-10-324x324.jpg',
+    specs:['Core i5 5th','8GB DDR3','256GB SSD','15.6" FHD','Iconic Build'],
+    highlight:'ThinkPad'
+  },
+  {
+    id:13, brand:'Dell', name:'Latitude E5550 Core i5 5th Gen', tags:['dell'],
+    price:38500, old:null, sale:false,
+    badge:null, badgeTxt:'',
+    img:'https://alwajidlaptops.com/wp-content/uploads/2021/07/WhatsApp-Image-2021-07-01-at-3.06.38-PM-324x324.jpeg',
+    specs:['Core i5 5th','8GB RAM','256GB SSD','15.6" FHD'],
+    highlight:'Latitude'
+  },
+];
+
+const PKR = n => '₨' + n.toLocaleString('en-PK');
+let pActive = 'all', pQuery = '', pVisible = 9;
+
+function pBuildCard(p, isHero){
+  const sale = p.sale && p.old;
+  const badge = p.badge ? `<div class="pcard-badge pb-${p.badge}">${p.badgeTxt}</div>` : '';
+  const oldP  = sale ? `<div class="pcard-price-old">${PKR(p.old)}</div>` : '';
+  const priceClass = sale ? 'pcard-price pcard-price-sale' : 'pcard-price';
+  const heroClass  = isHero ? ' pcard-hero' : '';
+
+  const specsHtml = p.specs.map((s,i) =>
+    `<span class="pcard-spec${s===p.highlight?' pcard-spec-highlight':''}">${s}</span>`
+  ).join('');
+
+  return `
+<div class="pcard-wrap${heroClass}" data-tags="${p.tags.join(' ')}${p.sale?' sale':''}"
+  onclick="openInquiry('${p.name.replace(/'/g,"\\'")}','${p.specs.join(' · ')}','${p.name.replace(/'/g,"\\'")}')">
+  <div class="pcard-img-area">
+    ${badge}
+    <div class="pcard-wish" onclick="event.stopPropagation();wishAlert()">
+      <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+    </div>
+    <img src="${p.img}" alt="${p.name}"
+      onerror="this.parentElement.style.background='var(--bg)';this.remove()"
+      loading="lazy"/>
+  </div>
+  <div class="pcard-body">
+    <div class="pcard-brand">${p.brand}</div>
+    <div class="pcard-name">${p.name}</div>
+    <div class="pcard-specs">${specsHtml}</div>
+    <div class="pcard-foot">
+      <div>
+        ${oldP}
+        <div class="${priceClass}">${PKR(p.price)}</div>
+      </div>
+      <button class="pcard-add" onclick="event.stopPropagation();openInquiry('${p.name.replace(/'/g,"\\'")}','${p.specs.join(' · ')}','${p.name.replace(/'/g,"\\'")}')">
+        <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      </button>
+    </div>
+  </div>
+</div>`;
+}
+
+function pRender(){
+  const grid = document.getElementById('pGrid');
+  const btn  = document.getElementById('pMoreBtn');
+  const q    = pQuery.toLowerCase();
+
+  const filtered = PRODUCTS.filter(p => {
+    const tagMatch = pActive === 'all'   ? true
+                   : pActive === 'sale'  ? p.sale
+                   : p.tags.includes(pActive);
+    const qMatch = !q
+      || p.name.toLowerCase().includes(q)
+      || p.brand.toLowerCase().includes(q)
+      || p.specs.some(s => s.toLowerCase().includes(q));
+    return tagMatch && qMatch;
+  });
+
+  const slice = filtered.slice(0, pVisible);
+
+  grid.innerHTML = slice.length ? slice.map((p, i) => pBuildCard(p, i===0 && pActive==='all' && !q)).join('')
+    : '<div class="p-empty">No laptops found. Try a different filter or search.</div>';
+
+  if(btn){
+    btn.parentElement.style.display = filtered.length > pVisible ? 'block' : 'none';
+  }
+}
+
+function pFilter(cat, btn){
+  pActive = cat; pVisible = 9;
+  document.querySelectorAll('.pf-tab').forEach(t => t.classList.remove('pf-on'));
+  btn.classList.add('pf-on');
+  pRender();
+  document.getElementById('products').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function pSearch(){
+  pQuery = document.getElementById('pSearchInput').value;
+  pVisible = 9;
+  pRender();
+}
+
+function pShowMore(){
+  pVisible += 6;
+  pRender();
+}
+
+function wishAlert(){ alert('💙 Saved to wishlist!'); }
+
+// Init
+pRender();
 
 /* ══ CATEGORY FILTER ══════════════════════════════ */
 function filterCat(cat, btn){
